@@ -1,5 +1,6 @@
 import random, time
 from random import randint
+
 everything = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@£$%^&*().,?0123456789'
 loweronly = 'abcdefghijklmnopqrstuvwxyz'
 upperonly = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -9,22 +10,33 @@ onlyupperwithnumbers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 onlylowerwithnumbers = 'abcdefghijklmnopqrstuvwxyz0123456789'
 numbersonly = '0123456789'
 secure = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@£$%^&*().,?0123456789'
+utf8 = '!"#$%&*+,-./0123456789:;<=>? ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ ¡¢£¤¥¦§¨©ª«¬ ®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞş'
 
 print('''
 
-+------------------------------------+
-|Password Generator by SamuelTheodore|
-+------------------------------------+
+     /$$$$$$$  /$$$$$$$   /$$$$$$                       /$$$$$$                                              /$$
+    | $$__  $$| $$__  $$ /$$__  $$                     /$$__  $$                                            | $$
+    | $$  \ $$| $$  \ $$| $$  \__/                    | $$  \__/  /$$$$$$  /$$$$$$/$$$$  /$$   /$$  /$$$$$$ | $$
+    | $$$$$$$/| $$$$$$$/| $$ /$$$$       /$$$$$$      |  $$$$$$  |____  $$| $$_  $$_  $$| $$  | $$ /$$__  $$| $$
+    | $$____/ | $$____/ | $$|_  $$      |______/       \____  $$  /$$$$$$$| $$ \ $$ \ $$| $$  | $$| $$$$$$$$| $$
+    | $$      | $$      | $$  \ $$                     /$$  \ $$ /$$__  $$| $$ | $$ | $$| $$  | $$| $$_____/| $$
+    | $$      | $$      |  $$$$$$/                    |  $$$$$$/|  $$$$$$$| $$ | $$ | $$|  $$$$$$/|  $$$$$$$| $$
+    |__/      |__/       \______/                      \______/  \_______/|__/ |__/ |__/ \______/  \_______/|__/ 
+                                                                                                                
+          +---------------------------------Powerful Password Generator-----------------------------------+                                                                                                       
+                                                                                                            
+        [1]  lower characters only
+        [2]  upper characters only
+        [3]  lower and upper characters only
+        [4]  all types of characters
+        [5]  lower and upper characters with numbers
+        [6]  only upper with numbers
+        [7]  only lower with numbers
+        [8]  numbers only
+        [9]  secure
+        [10] secure+ (utf-8)
 
-[1] lower characters only
-[2] upper characters only
-[3] lower and upper characters only
-[4] all types of characters
-[5] lower and upper characters with numbers
-[6] only upper with numbers
-[7] only lower with numbers
-[8] numbers only
-[9] secure
+          +---------------------------------Powerful Password Generator-----------------------------------+             
  
 ''')
 
@@ -222,4 +234,19 @@ if choice == "9":
     print("password length : %d" % len (password)) 
     print("Thanks for using my password generator!")
     input()
- 
+
+if choice == "10":    
+    length = (randint(20, 99))
+
+    number = 1
+
+    for pwd in range(number):
+      password = ''
+    for c in range(length):
+        password += random.choice(utf8)
+    print("+--------------------------------------+")
+    print('Your password: ' +password)
+    print("+--------------------------------------+")
+    print("password length : %d" % len (password)) 
+    print("Thanks for using my password generator!")
+    input()
